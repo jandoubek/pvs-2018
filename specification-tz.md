@@ -30,4 +30,7 @@ Uživatelský by postupně převzal kontrolu, až bude dost údajů.
 
 ## Checkpoint
 
-Taky zatím nevím. 
+1) Udělat mapu do apky
+2) Nějaké API, které poskytne kavárny
+3) hodnocení kavárny
+4) metriku pro doporučení
