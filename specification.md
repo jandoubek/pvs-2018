@@ -26,9 +26,16 @@ nebo také doplnění modelu).
 
 ## Checkpoint
 
-1. Sezbírání kaváren
-1. Sezbíraní testovacích dat
+1. Sezbíraní testovacích dat (kavárny, káva, vlastní hodnocení)
 2. Prototyp pro validaci matematického modelu a testovacích dat
+    * opakované hodnocení,
+    * 5 zrnek X 6 kritérií
+    * typ kávy
+    * vyrobit umělá testovací data `doc + format (JSON)`
+    * testovací případy (typický zákazník clusteru) `doc + data`
+3. Teoretický základ - entropie, grafy `doc`
+    * implementační prototyp - společný interface, 2 implementace pro (entropie, grafy) `py modul`
+    * evaluační prostředí - (umělá data > prototyp > doporučení > hodnocení) `py project + env`
 3. Samotný vývoj aplikace - separace backendu a frontendu
 4. Validace nastaveni features
 5. Release do app storů a do cloudu
