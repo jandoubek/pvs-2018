@@ -4,7 +4,7 @@ Pro vyvoj, spousteni a udrzbu evaluation env je dobre mit specialni virtualni py
 
 Minimalisticky pristup k takovemu prostredi je nasledujici.
 
-Jmeno prostredi je na vas. Doporucuji stejne jako jmeno python projektu - tzn. evaluation_env.
+Jmeno prostredi je na _venv_. Doporucuji stejne jako jmeno python projektu - tzn. evaluation_env.
 
 NOTE: Virtual env vam do adresarove struktury vytvori parallelni instalaci zavislych knihoven. Prosim necommitujte toto do gitu.
 
@@ -12,7 +12,7 @@ NOTE: Virtual env vam do adresarove struktury vytvori parallelni instalaci zavis
 
 ### create virtual env
 
- `virtualenv <name-of-env>`
+ `virtualenv -p python3 venv`
 
 ### start virtual env
 
