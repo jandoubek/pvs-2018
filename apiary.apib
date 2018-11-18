@@ -1,80 +1,147 @@
 FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
+HOST: http://coffea.cz/
 
-# pvs2018
+# Coffea
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+## Aplikační rozhraní Python serveru [/api]
 
-## Questions Collection [/questions]
+### Doporučení vhodné kávy [GET]
 
-### List All Questions [GET]
+Vrátí doporučený typ kávy a kavárnu, které by se mohli líbit uživateli na základě jeho preferencí.
 
 + Response 200 (application/json)
-
-        [
+    {
+        "cafe":
+        {
+            "id": 1,
+            "name": "Kavárna na rohu",
+            "rating": 2.5,
+            "position":
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
+                "latitude": 10.123,
+                "longitude": 30.848
             }
-        ]
+            
+        },
+        "coffee": 
+        {
+            "id":" 5,
+            "name": "Bomba Cappuccino",
+            "rating": 4.8
+        }
+    }
+    
+### Doporučerní vhodné kavárny [GET]
 
-### Create a New Question [POST]
+Vrátí vhodnou kavárnu, která by se mohla líbit uživateli na základě jeho preferencí.
 
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
++ Response 200 (application/json)
+    {
+        "cafe":
+        {
+            "id": 1,
+            "name": "Kavárna na rohu",
+            "rating": 2.5,
+            "position":
+            {
+                "latitude": 10.123,
+                "longitude": 30.848
+            }
+            
+        }
+    }
+    
+### Objevení nové kávy [GET]
+
+Vrátí nový typ kávy a kavárnu, které by mohli být pro uživatele zajímavé a současne je ješte nezkusil.
+
++ Response 200 (application/json)
+    {
+        "cafe":
+        {
+            "id": 1,
+            "name": "Kavárna na rohu",
+            "rating": 2.5,
+            "position":
+            {
+                "latitude": 10.123,
+                "longitude": 30.848
+            }
+            
+        },
+        "coffee": 
+        {
+            "id":" 5,
+            "name": "Bomba Cappuccino",
+            "rating": 4.8
+        }
+    }
+    
+### Objevení nové kavárny [GET]
+
+Vrátí novou kavárnu, která by se mohla líbit uživateli a ve které ješte nebyl na základě jeho preferencí.
+
++ Response 200 (application/json)
+    {
+        "cafe":
+        {
+            "id": 1,
+            "name": "Kavárna na rohu",
+            "rating": 2.5,
+            "position":
+            {
+                "latitude": 10.123,
+                "longitude": 30.848
+            }
+            
+        }
+    }
+    
+### Získání hodnocení vybrané kávy [GET]
+
+Zjistí aktuální hodnocení kávy z matematického modelu.
 
 + Request (application/json)
+    {
+        "id": 5
+    }
+    
++ Response 200 (application/json)
+    {
+        "nazev": "Vánoční Cappuccino",
+        "rating": 4.4
+    }
 
-        {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
-        }
+### Přidání nového hodnocení kávy [POST]
 
-+ Response 201 (application/json)
+Záznam nového hodnocení kávy od uživatele, které je vloženo do matematického modelu.
 
-    + Headers
-
-            Location: /questions/2
-
-    + Body
-
++ Request (application/json)
+    {
+        "rating": [
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
-            }
+                "criteria": "serving",
+                "value": 4
+            },
+            {
+                "criteria": "environment", 
+                "value": 5
+            },
+            {
+                "criteria": "color",
+                "value": 3
+            },
+            {   
+                "criteria": "appearance",
+                "value": 4
+            },
+            {  
+                "criteria": "aroma",
+                "value": 5 
+            },
+            {
+                "criteria": "taste",
+                "value": 2
+            },
+        ]
+    }
