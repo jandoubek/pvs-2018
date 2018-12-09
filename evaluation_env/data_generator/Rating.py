@@ -1,8 +1,8 @@
 class Rating:
-	def __init__(self, customer, coffee, rating):
+	def __init__(self, customer, coffee, ratingData):
 		self.customer = customer
 		self.coffee = coffee
-		self.rating = rating
+		self.ratingData = ratingData
 
 	def getCustomer(self):
 		return self.customer
@@ -10,10 +10,12 @@ class Rating:
 	def getCoffee(self):
 		return self.coffee
 
+	def getRatingData(self):
+		return self.ratingData.values()
+
 	def getJson(self):
-		output = {
+		return {
 			'customer' : self.customer.getName(),
 			'coffee' : self.coffee.getName(),
-			'rating' : self.rating
+			'rating' : self.ratingData
 		}
-		return output

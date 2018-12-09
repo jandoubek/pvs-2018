@@ -1,5 +1,5 @@
 import unittest
-from engine import engine
+import engine
 
 
 class GeneralTest(unittest.TestCase):
