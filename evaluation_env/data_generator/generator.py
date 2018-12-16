@@ -17,6 +17,7 @@ from evaluation_env.data_generator.Cafe import *
 from evaluation_env.data_generator.Coffee import *
 from evaluation_env.data_generator.Customer import *
 from evaluation_env.data_generator.Rating import *
+import math
 
 # Definice počtů jednotlivých objektů
 cafeCount = 5
@@ -30,7 +31,7 @@ cafeMinQuality = 10
 cafeMaxQuality = 90
 coffeeVariance = 16
 customerVariance = 8
-criteria = ["aroma", "environment", "color", "taste", "smell", "service"]
+criteria = ['coffeeTaste', 'cafeAtmosphere', 'baristaSkills', 'cafeCosiness', 'cafeStyle']
 
 cafeList = []
 coffeeList = []
@@ -66,11 +67,16 @@ for i in range(customerCount):
 # Výsledné hodnocení má gaussovské rozdělení se střední hodnotou rovnou kvalitě kávy a definovaným rozptylem
 for customer in customerList:
 	for coffee in coffeeList:
-		rating = {}
+		ratingValues = {}
 		for criterion in criteria:
 			criterionValue = round(random.gauss(coffee.getQuality(), customerVariance))
-			rating[criterion] = max(min(criterionValue, 100), 0)
-		rating = Rating(customer, coffee, rating)
+			ratingValues[criterion] = max(min(criterionValue, 100), 1)
+		ratingValues['coffeeTaste'] = math.ceil(ratingValues['coffeeTaste'] / 20)
+		ratingValues['cafeAtmosphere'] = math.ceil(ratingValues['cafeAtmosphere'] / 20)
+		ratingValues['baristaSkills'] = math.ceil(ratingValues['baristaSkills'] / 20)
+		ratingValues['cafeCosiness'] = math.ceil(ratingValues['cafeCosiness'] / 50) - 1
+		ratingValues['cafeStyle'] = math.ceil(ratingValues['cafeStyle'] / 50) - 1
+		rating = Rating(customer, coffee, ratingValues)
 		ratingList.append(rating)
 
 output = []
