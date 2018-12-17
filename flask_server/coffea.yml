@@ -1,0 +1,45 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "0.0.1"
+  title: Swagger REST Article
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+
+basePath: "/api"
+
+# Paths supported by the server application
+paths:
+  /ratings:
+    get:
+      operationId: "ratings.read"
+      tags:
+        - "Ratings"
+      summary: "Ratings"
+      description: "Read the list of ratings"
+      responses:
+        200:
+          description: "Successful read ratings list operation"
+          schema:
+            type: "array"
+            items:
+              properties:
+                customer:
+                  type: "string"
+                coffee:
+                  type: "string"
+                rating:
+                  type: "object"
+                  properties:
+                    coffeeTaste:
+                      type: "integer"
+                    cafeAtmosphere:
+                      type: "integer"
+                    baristaSkills:
+                      type: "integer"
+                    cafeCosiness:
+                      type: "integer"
+                    cafeStyle:
+                      type: "integer"
