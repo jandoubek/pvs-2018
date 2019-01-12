@@ -1,0 +1,169 @@
+{% extends "layout.html" %}
+
+{% block title %}Doporučení kávy{% endblock %}
+
+{% block body %}
+	<div class="jumbotron">
+		<div class="container text-center">
+			<h1 class="pt-3 pb-2 mb-3 border-bottom h4"><i class="fas fa-award"></i> Doporučení kávy</h1>
+			Na základě Vašich recenzií Vám určitě bude chutnat
+			<h2 class="display-4">Cappuccino</h2>
+			které připravují v kavárně
+			<h3>Starbucks, Karlovo náměstí</h3>
+		</div>
+	</div>
+<div class="container">
+
+	<h4 class="pt-3 pb-2 mb-3 border-bottom h4">Hodnocení kávy Cappuccino v Starbucks</h4>
+
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="rating-block">
+				<h4>Průměrné hodnocení</h4>
+				<h2 class="bold padding-bottom-7">4.3
+					<small>/ 5</small>
+				</h2>
+				<img src="{{ url_for('static', filename='img/bean.png') }}">
+				<img src="{{ url_for('static', filename='img/bean.png') }}">
+				<img src="{{ url_for('static', filename='img/bean.png') }}">
+				<img src="{{ url_for('static', filename='img/bean.png') }}">
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<h4>Přehled hodnocení</h4>
+			<div>
+				<div class="float-left mr-2">5 <img src="{{ url_for('static', filename='img/bean.png') }}"></div>
+				<div class="float-right ml-2">4x</div>
+				<div class="mt-2">
+					<div class="progress" style="height: 28px">
+						<div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%"
+							 aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="float-left mr-2">4 <img src="{{ url_for('static', filename='img/bean.png') }}"></div>
+				<div class="float-right ml-2">3x</div>
+				<div class="mt-2">
+					<div class="progress" style="height: 28px">
+						<div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%"
+							 aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="float-left mr-2">3 <img src="{{ url_for('static', filename='img/bean.png') }}"></div>
+				<div class="float-right ml-2">2x</div>
+				<div class="mt-2">
+					<div class="progress" style="height: 28px">
+						<div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%"
+							 aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="float-left mr-2">2 <img src="{{ url_for('static', filename='img/bean.png') }}"></div>
+				<div class="float-right ml-2">2x</div>
+				<div class="mt-2">
+					<div class="progress" style="height: 28px">
+						<div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 50%"
+							 aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="float-left mr-2">1 <img src="{{ url_for('static', filename='img/bean.png') }}"></div>
+				<div class="float-right ml-2">1x</div>
+				<div class="mt-2">
+					<div class="progress" style="height: 28px">
+						<div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 25%"
+							 aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-7">
+			<hr/>
+			<div class="review-block">
+				<div class="row">
+					<div class="col-sm-3">
+						<i class="h1 fas fa-user-circle"></i>
+						<div class="review-block-name"><a href="#">Tommekster</a></div>
+						<div class="review-block-date">06.01.2019<br/>před 1 dnem</div>
+					</div>
+					<div class="col-sm-9">
+						<div class="review-block-rate">
+							<img src="{{ url_for('static', filename='img/bean.png') }}">
+							<img src="{{ url_for('static', filename='img/bean.png') }}">
+							<img src="{{ url_for('static', filename='img/bean.png') }}">
+						</div>
+						<div class="review-block-title">this was nice in buy</div>
+						<div class="review-block-description">this was nice in buy. this was nice in buy. this was nice
+							in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy
+							this was nice in buy
+						</div>
+					</div>
+				</div>
+				<hr/>
+				<div class="row">
+					<div class="col-sm-3">
+						<i class="h1 fas fa-user-circle"></i>
+						<div class="review-block-name"><a href="#">Hedusk</a></div>
+						<div class="review-block-date">31.12.2018<br/>před týdnem</div>
+					</div>
+					<div class="col-sm-9">
+						<div class="review-block-rate">
+							<img src="{{ url_for('static', filename='img/bean.png') }}">
+							<img src="{{ url_for('static', filename='img/bean.png') }}">
+							<img src="{{ url_for('static', filename='img/bean.png') }}">
+							<img src="{{ url_for('static', filename='img/bean.png') }}">
+							<img src="{{ url_for('static', filename='img/bean.png') }}">
+						</div>
+						<div class="review-block-title">this was nice in buy</div>
+						<div class="review-block-description">this was nice in buy. this was nice in buy. this was nice
+							in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy
+							this was nice in buy
+						</div>
+					</div>
+				</div>
+				<hr/>
+				<div class="row">
+					<div class="col-sm-3">
+						<i class="h1 fas fa-user-circle"></i>
+						<div class="review-block-name"><a href="#">Jandoubek</a></div>
+						<div class="review-block-date">07.12.2018<br/>před měsícem</div>
+					</div>
+					<div class="col-sm-9">
+						<div class="review-block-rate">
+							<img src="{{ url_for('static', filename='img/bean.png') }}">
+							<img src="{{ url_for('static', filename='img/bean.png') }}">
+							<img src="{{ url_for('static', filename='img/bean.png') }}">
+							<img src="{{ url_for('static', filename='img/bean.png') }}">
+						</div>
+						<div class="review-block-title">this was nice in buy</div>
+						<div class="review-block-description">this was nice in buy. this was nice in buy. this was nice
+							in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy
+							this was nice in buy
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block css %}
+<style>
+	.jumbotron{
+		padding: 2rem 1rem;
+	}
+</style>
+{% endblock %}
+
+{% block js %}
+{% endblock %}
+

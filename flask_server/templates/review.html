@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+
+{% block title %}Nové hodnocení{% endblock %}
+
+{% block body %}
+<div class="container">
+	<h1 class="pt-3 pb-2 mb-3 border-bottom h2">Nové hodnocení kávy</h1>
+	<form>
+
+		<div class="form-group row">
+			<label for="cafeName" class="col-sm-3 col-form-label">Název kavárny</label>
+			<div class="col-sm-9">
+				<input type="text" class="form-control" id="cafeName" placeholder="Název kavárny">
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label for="cafeName" class="col-sm-3 col-form-label">Název kávy</label>
+			<div class="col-sm-9">
+				<input type="text" class="form-control" id="coffeName" placeholder="Název kávy">
+			</div>
+		</div>
+
+
+		<div class="form-group row">
+			<label for="coffeeTaste" class="col-sm-3">Jaká byla chuť kávy?</label>
+			<div class="col-sm-9">
+				<input type="range" class="custom-range" min="1" max="5" id="coffeeTaste">
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label for="cafeAtmosphere" class="col-sm-3">Jaká byla atomsféra kavárny?</label>
+			<div class="col-sm-9">
+				<input type="range" class="custom-range" min="1" max="5" id="cafeAtmosphere">
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label for="baristaSkills" class="col-sm-3">Jaké měl barista zkušenosti?</label>
+			<div class="col-sm-9">
+				<input type="range" class="custom-range" min="1" max="5" id="baristaSkills">
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label for="cafeCosiness" class="col-sm-3">Byla kavárna útulná?</label>
+			<div class="col-sm-9">
+				<div class="custom-control custom-radio custom-control-inline">
+					<input type="radio" id="cafeCosinessYes" name="cafeCosiness" class="custom-control-input">
+					<label class="custom-control-label" for="cafeCosinessYes">Ano</label>
+				</div>
+				<div class="custom-control custom-radio custom-control-inline">
+					<input type="radio" id="cafeCosinessNo" name="cafeCosiness" class="custom-control-input">
+					<label class="custom-control-label" for="cafeCosinessNo">Ne</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label for="cafeCosiness" class="col-sm-3">Líbil se Vám styl kavárny?</label>
+			<div class="col-sm-9">
+				<div class="custom-control custom-radio custom-control-inline">
+					<input type="radio" id="cafeStyleYes" name="cafeStyle" class="custom-control-input">
+					<label class="custom-control-label" for="cafeStyleYes">Ano</label>
+				</div>
+				<div class="custom-control custom-radio custom-control-inline">
+					<input type="radio" id="cafeStyleNo" name="cafeStyle" class="custom-control-input">
+					<label class="custom-control-label" for="cafeStyleNo">Ne</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label for="overallRating" class="col-sm-3">Celkové hodnocení</label>
+			<div class="col-sm-9">
+				<input type="range" class="custom-range" min="1" max="5" id="overallRating">
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label for="textReview" class="col-sm-3 col-form-label">Slovní hodnocení</label>
+			<div class="col-sm-9">
+				<textarea class="form-control" id="textReview" rows="3"></textarea>
+			</div>
+		</div>
+
+		<hr/>
+		<div class="form-group row">
+			<div class="col-sm-12 text-center">
+				<button class="btn btn-lg btn-warning" type="submit"><i class="fas fa-paper-plane"></i> Odeslat hodnocení</button>
+			</div>
+		</div>
+	</form>
+</div>
+{% endblock %}
+
+{% block css %}
+<style>
+	.custom-range {
+		width: auto;
+	}
+</style>
+{% endblock %}
+
+{% block js %}
+<script>
+	function showBeans(e)
+	{
+	    $(e).parent().find('img').remove();
+	    for(var i = 0; i < $(e).val(); i++)
+		{
+			var beanImage = $('<img />');
+	    	beanImage.attr('src', "{{ url_for('static', filename='img/bean.png') }}");
+			$(e).parent().append(beanImage);
+		}
+	}
+	$('[type=range]').on('input', function (){ showBeans(this); });
+	$( document ).ready(function() {
+	    $('[type=range]').each(function(){
+	        showBeans(this);
+	    });
+	});
+</script>
+{% endblock %}
+

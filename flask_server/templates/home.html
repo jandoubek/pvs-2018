@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}Domov{% endblock %}
+
+{% block body %}
+	<!-- Main jumbotron for a primary marketing message or call to action -->
+	<div class="jumbotron">
+		<div class="container">
+			<h1 class="display-4">Vítejte!</h1>
+			<p></p>
+		</div>
+	</div>
+
+	<div class="container">
+		<!-- Example row of columns -->
+		<div class="row">
+			<div class="col-md-4">
+				<h4><i class="far fa-lightbulb"></i> To, co máte rádi</h4>
+				<p>Každý den se snažíme vybrat na základě Vašich recenzií to správne kafe, které Vám bude zaručeně chutnat!
+					S týmto pomocníkem se už nemusíte bát, že by ste narazil na zlou kávu.</p>
+				<p><a class="btn btn-warning href="{{ url_for('suggestions') }}" role="button">Doporučit kávu &raquo;</a></p>
+			</div>
+			<div class="col-md-4">
+				<h4><i class="fas fa-search"></i> Objevte nové chutě</h4>
+				<p>Zkoušíte rádi nové věci? Tak zkuste také nové a netradičné kávy, které pečlivě vybíráme na základě hodnocení od ostatních uživatelů.
+					Nebojte se experimentovat a možná najdete to pravé kafe pro sebe!
+				</p>
+				<p><a class="btn btn-warning" href="{{ url_for('exploration') }}" role="button">Objevit novou kávu &raquo;</a></p>
+			</div>
+			<div class="col-md-4">
+				<h4><i class="far fa-star"></i> Hodnoťte kávu</h4>
+				<p>Zkusili jste novou kavárnu a chutnala Vám jejich káva? Tak ji oceňte pozitivním hodnocení a zvýšíte tak prestiž kavárny.
+					Současně si tak můžete vybudovat svůj kávový profil a zjistit, co máte skutečně rádi.</p>
+				<p><a class="btn btn-warning" href="{{ url_for('newReview') }}" role="button">Ohodnotit kávu &raquo;</a></p>
+			</div>
+		</div>
+	</div> <!-- /container -->
+{% endblock %}
+
+{% block css %}
+<style>
+	.bd-placeholder-img {
+		font-size: 1.125rem;
+		text-anchor: middle;
+	}
+
+	@media (min-width: 768px) {
+		.bd-placeholder-img-lg {
+			font-size: 3.5rem;
+		}
+	}
+	.jumbotron{
+		padding: 2rem 1rem;
+	}
+</style>
+{% endblock %}
+

@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block title %}Nové hodnocení{% endblock %}
+
+{% block body %}
+<div class="container">
+	<h1 class="pt-3 pb-2 mb-3 border-bottom h2">Moje recenze</h1>
+	<table class="table table-striped">
+		<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Kavárna</th>
+			<th scope="col">Káva</th>
+			<th scope="col">Datum a čas</th>
+			<th scope="col">Celkové hodnocení</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<th scope="row">1</th>
+			<td>Costa Coffee</td>
+			<td>Americano</td>
+			<td>10.12.2018 14:51</td>
+			<td>
+				4 / 5
+				<img src="{{ url_for('static', filename='img/bean.png') }}">
+				<img src="{{ url_for('static', filename='img/bean.png') }}">
+				<img src="{{ url_for('static', filename='img/bean.png') }}">
+				<img src="{{ url_for('static', filename='img/bean.png') }}">
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">2</th>
+			<td>Starbucks</td>
+			<td>Espresso</td>
+			<td>23.12.2018 08:05</td>
+			<td>
+				3 / 5
+				<img src="{{ url_for('static', filename='img/bean.png') }}">
+				<img src="{{ url_for('static', filename='img/bean.png') }}">
+				<img src="{{ url_for('static', filename='img/bean.png') }}">
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">3</th>
+			<td>Cukrárna Václavská pasáž</td>
+			<td>Cappuccino</td>
+			<td>27.12.2018 16:53</td>
+			<td>
+				5 / 5
+				<img src="{{ url_for('static', filename='img/bean.png') }}">
+				<img src="{{ url_for('static', filename='img/bean.png') }}">
+				<img src="{{ url_for('static', filename='img/bean.png') }}">
+				<img src="{{ url_for('static', filename='img/bean.png') }}">
+				<img src="{{ url_for('static', filename='img/bean.png') }}">
+			</td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+{% endblock %}
+
+{% block css %}
+{% endblock %}
+
+{% block js %}
+{% endblock %}
+

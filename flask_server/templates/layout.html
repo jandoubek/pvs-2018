@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+	<meta name="generator" content="Jekyll v3.8.5">
+	<title>{% block title %}{% endblock %}</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/custom-style.css') }}" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+	{% block css %}{% endblock %}
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+	<a class="navbar-brand" href="#">
+		<img src="{{ url_for('static', filename='img/logo.png') }}" width="45" class="d-inline-block align-top" alt="">
+		Coffea
+	</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+			aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="{{ url_for('home') }}"><i class="fas fa-home"></i> Domov</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{{ url_for('suggestions') }}"><i class="far fa-lightbulb"></i> Doporučení</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{{ url_for('exploration') }}"><i class="fas fa-search"></i> Objavování</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{{ url_for('reviewList') }}"><i class="fas fa-tasks"></i> Moje recenze</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{{ url_for('newReview') }}"><i class="fas fa-plus"></i> Nová recenze</a>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0">
+			<a class="btn btn-outline-secondary my-2 my-sm-0" href="{{ url_for('login') }}">Odhlásit se</a>
+		</form>
+	</div>
+</nav>
+
+<main role="main">
+
+	{% block body %}{% endblock %}
+
+</main>
+
+<hr>
+
+<footer class="container">
+	<p>PVS &copy; 2018-2019</p>
+</footer>
+
+<script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+
+
+{% block js %}{% endblock %}
+
+</body>
+</html>
